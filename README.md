@@ -16,10 +16,11 @@ Just copy text and use CNTRL+v to paste into prompt box
 - 😈 Prompt editor with safety & seed options
 - 🔥 Toggle safety tolerance for Flux series
 - 🎞 Image-to-video generation via SeeDance
-- 🎲 Random seed generator
+- 🎲 Manual or Random seed generator
 - 🎨 Intuitive GUI with live resolution switching
 - 📁 Image selector for video input
 - ✅ Supports 480p/720p/1080p video and 2K/4K images
+- ✅ API key is stored in a local fal_key.txt file
 - 💾 Results saved locally as PNG or MP4
 
 Flux family has strict restrictions and may refuse your prompt. Bytedance has higher freedom.
