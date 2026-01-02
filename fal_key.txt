@@ -1,1 +1,1 @@
-paste_your_API_here
+paste_your_API_key_here
