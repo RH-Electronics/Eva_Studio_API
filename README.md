@@ -31,3 +31,5 @@ Just copy text and use CNTRL+v to paste into prompt box
 
 ```bash
 python eva_studio.py
+
+<img width="877" height="1165" alt="image" src="https://github.com/user-attachments/assets/135198b8-49d3-4a5a-b86b-32cbf95eda41" />
