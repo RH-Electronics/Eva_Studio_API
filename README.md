@@ -22,6 +22,8 @@ Just copy text and use CNTRL+v to paste into prompt box
 - ✅ Supports 480p/720p/1080p video and 2K/4K images
 - 💾 Results saved locally as PNG or MP4
 
+Flux family has strict restrictions and may refuse your prompt. Bytedance has higher freedom.
+
 <img width="584" height="776" alt="screenshot" src="https://github.com/user-attachments/assets/fa3e0522-c1fd-464d-ad2f-e99ca81a3ae9" />
 
 
