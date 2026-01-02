@@ -22,6 +22,9 @@ Just copy text and use CNTRL+v to paste into prompt box
 - ✅ Supports 480p/720p/1080p video and 2K/4K images
 - 💾 Results saved locally as PNG or MP4
 
+<img width="584" height="776" alt="screenshot" src="https://github.com/user-attachments/assets/fa3e0522-c1fd-464d-ad2f-e99ca81a3ae9" />
+
+
 ## Requirements
 
 - Python 3.9+
@@ -32,4 +35,5 @@ Just copy text and use CNTRL+v to paste into prompt box
 ```bash
 python eva_studio.py
 
-<img width="877" height="1165" alt="image" src="https://github.com/user-attachments/assets/135198b8-49d3-4a5a-b86b-32cbf95eda41" />
+
+
