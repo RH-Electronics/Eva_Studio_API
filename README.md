@@ -45,6 +45,6 @@ pip install pillow piexif fal_client
 ## Run
 
 ```bash
-python eva_studio.py
+python eva-studio-1-4.py
 
 
