@@ -11,6 +11,17 @@ from PIL import Image, PngImagePlugin
 import piexif
 import piexif.helper
 from PIL import ImageTk
+import sys
+
+def resource_path(relative_path):
+    """ Получает абсолютный путь к ресурсам, работает и для dev, и для PyInstaller """
+    try:
+        # PyInstaller создает временную папку _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 # --- Загрузка ключа ---
 def load_key():
@@ -75,10 +86,19 @@ class EvaStudioApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Eva Studio API v1.4 🖤")
+
+        # Устанавливаем иконку окна
+        try:
+            icon_path = resource_path("favicon.ico")
+            self.root.iconbitmap(icon_path)
+        except Exception as e:
+            print(f"[Eva] Не удалось загрузить иконку: {e}")
+
         self.root.geometry("700x980")
         self.root.configure(bg="#300000")  # фон на случай отсутствия картинки
 
-        bg_image_path = "succubus_bg.png"
+        #bg_image_path = "succubus_bg.png"
+        bg_image_path = resource_path("succubus_bg.png")
         bg_image = Image.open(bg_image_path)
         bg_photo = ImageTk.PhotoImage(bg_image)
 
@@ -334,7 +354,7 @@ class EvaStudioApp:
         cur_seed = self.seed_var.get()
         if not prompt: return
         self.gen_btn.config(state=tk.DISABLED)
-        self.status_label.config(text=f"⏳ Generating a masterpiece without boundaries...", fg="purple")
+        self.status_label.config(text=f"⏳ Generating a masterpiece without boundaries...", bg=self.bg_color, fg=self.fg_color)
         try:
             args = {"prompt": prompt, "seed": int(cur_seed), "enable_safety_checker": self.safety_var.get()}
             if "Flux 2" in model_name: args["safety_tolerance"] = str(self.tolerance_var.get())
@@ -366,7 +386,7 @@ class EvaStudioApp:
                 f.write(requests.get(res_url).content)
 
             if ext != "mp4": inject_metadata(file_path, prompt, cur_seed, model_name)
-            self.status_label.config(text=f"✅ We beat the system! Saved Results/{filename}", fg="green")
+            self.status_label.config(text=f"🔥 We beat the system! Saved Results/{filename}", bg=self.bg_color, fg=self.fg_color)
         except Exception as e:
             messagebox.showerror("API error", str(e))
             self.status_label.config(text="❌ Something went wrong...", fg="red")
